@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Link-in-bio page for your socials and content in English and Thai">
+  <meta name="keywords" content="link in bio, social links, English, Thai, personal branding">
+  <meta name="author" content="Your Name">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Your Name - Link in Bio">
+  <meta property="og:description" content="Connect with me through my socials and content!">
+  <meta property="og:image" content="https://yourdomain.vercel.app/og-image.jpg">
+  <meta property="og:url" content="https://yourdomain.vercel.app">
+  <title>Your Name - Link in Bio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+<div id="qrcode"></div>
+</head>
+<body>
+  <header>
+    <h1 id="title">Your Name</h1>
+    <p id="subtitle">Connect with me in <span onclick="switchLanguage('en')">English</span> | <span onclick="switchLanguage('th')">ไทย</span></p>
+  </header>
+  <main>
+    <section id="bio">
+      <p class="en">Welcome to my link-in-bio page! Find all my socials and content below.</p>
+      <p class="th" style="display: none;">ยินดีต้อนรับสู่หน้า Link-in-Bio ของฉัน! ค้นหาลิงก์โซเชียลและเนื้อหาทั้งหมดด้านล่าง</p>
+    </section>
+    <section id="links">
+      <a href="/go/instagram" class="link-btn">Instagram</a>
+      <a href="/go/twitter" class="link-btn">Twitter / X</a>
+      <a href="/go/youtube" class="link-btn">YouTube</a>
+      <a href="/go/tiktok" class="link-btn">TikTok</a>
+    </section>
+    <section id="qr-code">
+      <div id="qrcode"></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

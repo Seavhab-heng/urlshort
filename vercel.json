@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    { "source": "/go/instagram", "destination": "https://instagram.com/yourusername", "permanent": false },
+    { "source": "/go/twitter", "destination": "https://x.com/yourusername", "permanent": false },
+    { "source": "/go/youtube", "destination": "https://youtube.com/@yourchannel", "permanent": false },
+    { "source": "/go/tiktok", "destination": "https://tiktok.com/@yourusername", "permanent": false },
+    { "source": "/home", "destination": "/index.html", "permanent": true }
+  ]
+}
