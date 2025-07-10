@@ -1,9 +1,12 @@
 {
   "redirects": [
-    { "source": "/go/instagram", "destination": "https://instagram.com/yourusername", "permanent": false },
-    { "source": "/go/twitter", "destination": "https://x.com/yourusername", "permanent": false },
-    { "source": "/go/youtube", "destination": "https://youtube.com/@yourchannel", "permanent": false },
-    { "source": "/go/tiktok", "destination": "https://tiktok.com/@yourusername", "permanent": false },
-    { "source": "/home", "destination": "/index.html", "permanent": true }
+    { "source": "/go/instagram", "destination": "https://instagram.com/:username", "permanent": false },
+    { "source": "/go/twitter", "destination": "https://x.com/:username", "permanent": false },
+    { "source": "/go/youtube", "destination": "https://youtube.com/@:username", "permanent": false },
+    { "source": "/go/tiktok", "destination": "https://tiktok.com/@:username", "permanent": false },
+    { "source": "/bio/:name", "destination": "/user.html", "permanent": false },
+    { "source": "/:code", "destination": "/api/redirect/:code", "permanent": false },
+    { "source": "/qr/:code", "destination": "/api/qr/:code", "permanent": false },
+    { "source": "/", "destination": "/index.html", "permanent": true }
   ]
 }
