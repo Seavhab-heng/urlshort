@@ -4,6 +4,6 @@ function switchLanguage(lang) {
   document.getElementById('title').textContent = lang === 'en' ? 'Your Name' : 'ชื่อของคุณ';
   document.getElementById('subtitle').innerHTML = `Connect with me in <span onclick="switchLanguage('en')">English</span> | <span onclick="switchLanguage('th')">ไทย</span>`;
 }
-QRCode.toCanvas(document.getElementById('qrcode'), 'https://yourdomain.vercel.app', { width: 150 }, (err) => {
+QRCode.toCanvas(document.getElementById('qrcode'), 'https://www.thailink.vercel.app', { width: 150 }, (err) => {
   if (err) console.error(err);
 });
