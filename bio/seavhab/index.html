@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Seavhab - Linktree Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5; /* Light grey background similar to the image */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to the top, as content is at the top of the screenshot */
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px; /* Add some padding around the container */
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px; /* Adjust max-width to match the perceived width in the screenshot */
+            background-color: #ffffff; /* White background for the main container */
+            border-radius: 10px; /* Slightly rounded corners for the container if desired */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 20px;
+            text-align: center;
+        }
+
+        .profile-header {
+            margin-bottom: 30px;
+        }
+
+        .profile-picture-container {
+            width: 120px; /* Adjust size as needed */
+            height: 120px; /* Adjust size as needed */
+            border-radius: 50%; /* Makes it circular */
+            overflow: hidden;
+            margin: 0 auto 15px auto; /* Center the image and add space below */
+            border: 2px solid #ccc; /* Optional: add a border around the profile picture */
+        }
+
+        .profile-picture {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the container */
+        }
+
+        .username {
+            font-size: 1.8em;
+            color: #333;
+            margin: 0;
+            display: flex; /* Use flexbox to align name and icon */
+            justify-content: center;
+            align-items: center;
+            gap: 8px; /* Space between name and icon */
+        }
+
+        /* Styling for the verified icon */
+        .verified-icon {
+            color: #1DA1F2; /* A common blue for verified badges */
+            font-size: 0.8em; /* Adjust size relative to username font size */
+        }
+
+        .verified-icon-img {
+            width: 20px; /* Adjust size for image-based verified icon */
+            height: 20px;
+            vertical-align: middle; /* Align with text */
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Space between buttons */
+            margin-bottom: 30px; /* Space before social media icons */
+        }
+
+        .link-button {
+            display: block;
+            background-color: #6ee755; /* Green color from the screenshot */
+            color: #000; /* Text color, black as seen in the image */
+            text-decoration: none;
+            padding: 18px 25px; /* Adjust padding for button size */
+            border-radius: 10px; /* Rounded corners for buttons */
+            font-size: 1.1em;
+            font-weight: 700; /* Bold font for button text */
+            transition: background-color 0.3s ease;
+            border: 1px solid #5cb85c; /* Slightly darker green border */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for buttons */
+            text-align: center; /* Center the text inside the button */
+            white-space: normal; /* Allow text to wrap */
+            word-wrap: break-word; /* Break long words */
+        }
+
+        .link-button:hover {
+            background-color: #5cb85c; /* Darker green on hover */
+        }
+
+        /* Social Media Icons Styling */
+        .social-icons-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allow icons to wrap to the next line on smaller screens */
+            gap: 20px; /* Space between icons */
+            margin-bottom: 30px; /* Space before the join link button */
+        }
+
+        .social-icon-link {
+            display: flex; /* Use flex to center potential Font Awesome icons */
+            justify-content: center;
+            align-items: center;
+            width: 38px; /* Fixed size for icons */
+            height: 38px;
+        }
+
+        .social-icon-link img {
+            width: 100%; /* Make image fill the link container */
+            height: 100%;
+            object-fit: contain; /* Ensure the full icon is visible */
+            border-radius: 50%; /* If icons should be circular */
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .social-icon-link img:hover {
+            transform: scale(1.1);
+        }
+
+        /* If using Font Awesome icons */
+        .social-icon-link .fab,
+        .social-icon-link .fas {
+            font-size: 32px; /* Adjust size of Font Awesome icons */
+            color: #333; /* Dark color for icons */
+            transition: color 0.2s ease-in-out;
+        }
+
+        .social-icon-link .fab:hover,
+        .social-icon-link .fas:hover {
+            color: #007bff; /* Example hover color, choose as desired */
+        }
+
+
+        /* Join Link Bio Section Styling */
+        .join-link-container {
+            margin-top: 20px;
+        }
+
+        .join-link-button {
+            display: inline-flex; /* Use inline-flex to align icon and text */
+            align-items: center;
+            justify-content: center; /* Center content horizontally */
+            background-color: transparent; /* Transparent background */
+            color: #555; /* Greyish text color as in the screenshot */
+            text-decoration: none;
+            padding: 12px 25px;
+            border: 1px solid #ddd; /* Light grey border */
+            border-radius: 25px; /* More rounded corners */
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .join-link-button:hover {
+            background-color: #f0f0f0;
+            color: #333;
+            border-color: #ccc;
+        }
+
+        .join-link-button .star-icon {
+            margin-right: 8px; /* Space between star and text */
+            font-size: 1.2em; /* Adjust star size */
+            color: #555; /* Star color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <div class="profile-picture-container">
+                <img src="YOUR_ACTUAL_IMAGE_URL_HERE.jpg" alt="Profile Picture" class="profile-picture">
+            </div>
+            <h1 class="username">
+                Mr. Seavhab
+                <i class="fas fa-check-circle verified-icon"></i>
+                </h1>
+        </div>
+
+        <div class="links-container">
+            <a href="#" class="link-button">Ways To Help - BLM (PETITIONS, TEXT/CALL, EDUCATION, DONATE,...)</a>
+            <a href="#" class="link-button">HOW TO SUPPORT PROTESTERS IN EVERY CITY</a>
+            <a href="#" class="link-button">MASSIVE LINK (Relevant Events, Petitions, Gofundme's, Protest info,...)</a>
+            <a href="#" class="link-button">PENTHOUSE CLOTHING</a>
+            <a href="#" class="link-button">STREAMING</a>
+            <a href="#" class="link-button">MERCH</a>
+            <a href="#" class="link-button">WEBPAGE</a>
+        </div>
+
+        <div class="social-icons-container">
+            <a href="#" class="social-icon-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon-link"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="social-icon-link"><i class="fab fa-spotify"></i></a>
+            <a href="#" class="social-icon-link"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-icon-link"><i class="fab fa-soundcloud"></i></a>
+            <a href="#" class="social-icon-link"><i class="fab fa-apple"></i></a>
+            <a href="#" class="social-icon-link"><i class="fas fa-envelope"></i></a>
+            <a href="#" class="social-icon-link"><i class="fab fa-x-twitter"></i></a>
+        </div>
+
+        <div class="join-link-container">
+            <a href="https://thail.ink/mrseavhab" class="join-link-button">
+                <span class="star-icon">★</span> Join Mr. Seavhab on Thail.ink
+            </a>
+        </div>
+    </div>
+</body>
+</html>
