@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    new Date().getTime(),event:'gtm.js'});var f=d.createElement(s),
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-K2N29HXN');</script>
@@ -107,10 +107,48 @@
         footer a:hover {
             text-decoration: underline;
         }
+        /* Countdown specific styles */
+        #countdown-section {
+            background-color: #e6f2ff;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+            text-align: center;
+            border: 1px solid #cce0ff;
+        }
+        #countdown-section h2 {
+            color: #007bff;
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        #countdown-timer {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #28a745; /* Green for emphasis */
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between time units */
+        }
+        .countdown-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .countdown-value {
+            font-size: 1.8em;
+            color: #0056b3;
+        }
+        .countdown-label {
+            font-size: 0.8em;
+            color: #555;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K2N29HXN"
+    <noscript><iframe src="https://www.googletm.com/ns.html?id=GTM-K2N29HXN"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
         <header>
@@ -119,6 +157,30 @@
                 **เบื่อลิงก์ยาวๆ ที่ดูรกรุงรังไหม? อยากรู้ไหมว่าใครคลิกลิงก์ของคุณและมาจากไหน?** Shortlnk.in.th คือเครื่องมือย่อลิงก์ (URL Shortener) ชั้นนำที่ช่วยให้คุณเปลี่ยนลิงก์ที่ยาวเหยียดให้เป็น **URL สั้นๆ** ที่น่าจดจำและทรงพลัง พร้อมระบบ **ติดตามผลลัพธ์การคลิก** และ **จัดการลิงก์ขั้นสูง** ที่จะช่วยเพิ่มประสิทธิภาพแคมเปญดิจิทัลและการสื่อสารของคุณ
             </p>
         </header>
+
+        <section id="countdown-section">
+            <h2>เปิดตัวฟีเจอร์ใหม่เร็วๆ นี้!</h2>
+            <p>เตรียมพบกับนวัตกรรมใหม่ที่จะทำให้การจัดการลิงก์ของคุณดียิ่งขึ้นไปอีก</p>
+            <div id="countdown-timer">
+                <div class="countdown-unit">
+                    <span id="days" class="countdown-value"></span>
+                    <span class="countdown-label">วัน</span>
+                </div>
+                <div class="countdown-unit">
+                    <span id="hours" class="countdown-value"></span>
+                    <span class="countdown-label">ชั่วโมง</span>
+                </div>
+                <div class="countdown-unit">
+                    <span id="minutes" class="countdown-value"></span>
+                    <span class="countdown-label">นาที</span>
+                </div>
+                <div class="countdown-unit">
+                    <span id="seconds" class="countdown-value"></span>
+                    <span class="countdown-label">วินาที</span>
+                </div>
+            </div>
+            <p id="countdown-message" style="margin-top: 20px; font-weight: bold; color: #dc3545;"></p>
+        </section>
 
         <section>
             <h2>ทำไมต้องเลือก Shortlnk.in.th?</h2>
@@ -134,7 +196,7 @@
 
         <section>
             <h2>Shortlnk.in.th เหมาะกับใคร?</h2>
-            <p>ไม่ว่าคุณจะเป็นใครในโลกดิจิทัล Shortlnk.in.th ก็พร้อมเป็นเครื่องมือคู่ใจของคุณ:</p>
+            <p>ไม่ว่าคุณจะเป็นใครในโลกดิจิทัล Shortlnk.in.th ก็พร้อมเป็นเครื่องมือคู่คิดของคุณ:</p>
             <ul>
                 <li>**นักการตลาดและเอเจนซี่:** สร้างแคมเปญที่วัดผลได้ ติดตามประสิทธิภาพโฆษณาและโพสต์โซเชียลมีเดียอย่างแม่นยำ</li>
                 <li>**เจ้าของธุรกิจ E-commerce:** โปรโมทสินค้าด้วยลิงก์ที่น่าสนใจ วัดผลแคมเปญส่วนลด และเข้าใจเส้นทางการซื้อของลูกค้า</li>
@@ -159,5 +221,44 @@
             <p>&copy; 2025 Shortlnk.in.th. All rights reserved.</p>
         </footer>
     </div>
+
+    <script>
+        // Set the date for the launch (August 7, 2025 at 12:00 PM - noon, for 'lunch')
+        // JavaScript Date months are 0-indexed (January is 0, August is 7)
+        const launchDate = new Date("2025-08-07T12:00:00").getTime();
+
+        // Update the countdown every 1 second
+        const x = setInterval(function() {
+
+            // Get current date and time
+            const now = new Date().getTime();
+
+            // Find the distance between now and the launch date
+            const distance = launchDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the respective elements
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            // If the countdown is finished
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown-timer").innerHTML = ""; // Clear the numbers
+                document.getElementById("countdown-message").innerHTML = "Shortlnk.in.th พร้อมให้คุณใช้งานฟีเจอร์ใหม่แล้ว!";
+                document.getElementById("countdown-section").style.backgroundColor = '#d4edda'; /* Greenish background */
+                document.getElementById("countdown-section").style.borderColor = '#28a745'; /* Green border */
+                document.getElementById("countdown-section").querySelector('h2').textContent = "ฟีเจอร์ใหม่เปิดตัวแล้ว!";
+                document.getElementById("countdown-section").querySelector('p').textContent = "เยี่ยมชมได้เลย!";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
